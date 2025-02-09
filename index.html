@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CS220: Digital Circuits Lab (Spring 2025)</title>
+  <meta name="description" content="Department of Computer Science, University of Crete, CS-220: Digital Circuits Lab">
+  <meta name="keywords" content ="digital circuits, elective courses, undergraduate courses, computer science, computer engineering"> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+  <!-- ALERTS -->
+  <div class="row">
+    <div class="col-md-12">
+      <!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Οι παρακάτω διαλέξεις του μαθήματος θα πραγματοποιηθούν μέσω της διαδικτυακής πλατφόρμας Zoom:
+        <ul>
+          <li><b>Τετάρτη 28 Φεβρουαρίου 14:15 - 16:00</b></li>
+          <li><b>Δευτέρα 04 Μαρτίου 14:15 - 16:00</b></li>
+        </ul>
+        <p>Θα βρείτε το Zoom link στο πράσινο κουμπί παρακάτω:</p>
+        <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp;
+        <a class="btn btn-success btn-xs" role="button" href="https://us06web.zoom.us/j/86912093458?pwd=rs8iAiJ2fcAQ0zmlOF3TPGW7HCFaFk.1" target="_new">
+          <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Zoom
+        </a>
+        <br>
+      </div>
+      -->
+
+      <!--div class="alert alert-danger" role="alert"-->
+      <!--div class="alert alert-success" role="alert"-->
+      <!--div class="alert alert-info" role="alert"-->
+      <!--div class="alert alert-warning" role="alert"-->
+      <!--
+      <div class="alert alert-success myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        <b>Announcement</b>
+      </div>
+      -->
+
+<!-- ############################## LAB SESSIONS ############################### -->
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <p>
+	  <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+	  <b><u>ΔΗΛΩΣΕΙΣ ΕΡΓΑΣΤΗΡΙΩΝ (online)</u></b>
+	</p>
+	<p>
+	Οι ώρες των εργαστηρίων είναι οι εξής:
+	<ul>
+	<li><b>(Α)</b> Δευτέρα 16:00 - 17:00</li>
+	<li><b>(Β)</b> Δευτέρα 17:00 - 18:00</li>
+	<li><b>(Γ)</b> Πέμπτη 16:00 - 17:00</li>
+	<li><b>(Δ)</b> Πέμπτη 17:00 - 18:00</li>
+	</ul>
+
+	Σε κάθε εργαστήριο θα υπάρχουν <b>ΜEΧΡΙ 8 AΤΟΜΑ</b> και μπορείτε να δηλώσετε <b>ΜΟΝΟ 1 ΑΠΟ ΤΙΣ 4 ΩΡΕΣ</b>.
+	<br>
+	Παρακαλώ γράψτε το email/username σας και τον Αριθμο Μητρώου (ΑΜ) σας:
+	π.χ. papaef@csd.uoc.gr - ΑΜ 1037
+	<br>
+
+	Οι ώρες που θα δηλώσετε θα ισχύουν για <b>ΟΛΟ ΤΟ ΕΞΑΜΗΝΟ</b> (όποτε υπάρχουν εργαστήρια).
+	<br>
+        Παρακαλώ να δηλώσετε την επιθυμητή ώρα <b>ΜΕΧΡΙ ΤΗΝ ΠΑΡΑΣΚΕΥΗ 8 ΜΑΡΤΙΟΥ</b> (το poll θα κλείσει αυτόματα) στο παρακάτω link:
+	<br>
+	<a href="https://framadate.org/hy220-2024s-labs" class="alert-link" target="_new">https://framadate.org/hy220-2024s-labs</a>
+
+	</p>
+      </div>
+-->
+  
+<!-- ############################## LABS ############################### -->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η εκφώνηση του <a href="labs/HY220_Lab0.pdf" class="alert-link">Εργαστηρίου 0</a> είναι διαθέσιμη. Τα εργαστήρια θα γίνουν την εβδομάδα 19/03 έως 22/03 και την εβδομάδα 26/03 έως 29/03. <i>Δεν βαθμολογείται, παρουσία υποχρεωτική!</i>
+      </div>
+-->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η εκφώνηση του <a href="labs/HY220_Lab1.pdf" class="alert-link">Εργαστηρίου 1</a> είναι διαθέσιμη. Τα εργαστήρια θα γίνουν την εβδομάδα 01/04 έως 05/04 και την εβδομάδα 08/04 έως 12/04.
+      </div>
+-->
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η εκφώνηση του <a href="labs/HY220_Lab2.pdf" class="alert-link">Εργαστηρίου 2</a> είναι διαθέσιμη. Τα εργαστήρια θα γίνουν την εβδομάδα 15/04 έως 19/04 και την εβδομάδα 22/04 έως 26/04.
+      </div>
+-->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η εκφώνηση του <a href="labs/HY220_Lab3.pdf" class="alert-link">Εργαστηρίου 3</a> είναι διαθέσιμη. Τα εργαστήρια θα γίνουν την εβδομάδα 13/05 έως 17/05 και την εβδομάδα 20/05 έως 24/05.
+      </div>
+-->
+
+<!-- ############################## HOMEWORKS ############################### -->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η εκφώνηση της <a href="homeworks/HY220_HW2.pdf" class="alert-link">2ης Σειράς Ασκήσεων</a> είναι διαθέσιμη. 
+        Η προθεσμία παράδοσης είναι 21 Δεκεμβρίου 23:59.
+      </div>
+-->
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η εκφώνηση της <a href="homeworks/HY220_HW3.pdf" class="alert-link">3ης Σειράς Ασκήσεων</a> είναι διαθέσιμη. 
+        Η προθεσμία παράδοσης είναι 31 Ιανουαρίου 23:59.
+      </div>
+-->
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η εκφώνηση της <a href="homeworks/HY220_HW4.pdf" class="alert-link">4ης Σειράς Ασκήσεων</a> είναι διαθέσιμη. 
+        Η προθεσμία παράδοσης είναι 31 Ιανουαρίου 23:59.
+      </div>
+-->
+
+<!-- ############################## MIDTERM ############################### -->
+<!--
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η <b>Εξέταση Προόδου</b> θα γίνει τη <b>Δευτέρα 18 Νοεμβρίου 12:00 - 14:00</b> στην αίθουσα A.125. 
+        <br>Η πρόοδος είναι υποχρεωτική και γίνεται με κλειστές σημειώσεις. Η ύλη για την εξέταση θα είναι μέχρι και τη διάλεξη για "Χρονισμό Σύγχρονων Κυκλωμάτων".
+      </div>
+-->
+
+<!-- ############################## FINAL ############################### -->
+<!--
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η <b>Τελική Εξέταση</b> θα γίνει την <b>Τετάρτη 12 Ιουνίου 2024: 13.30 - 16.30</b> στο Αμφιθέατρο ΣΟ. 
+        <br>Η Τελική Εξέταση είναι υποχρεωτική (35%) και γίνεται με κλειστές σημειώσεις. Η ύλη για την εξέταση είναι όλες οι διαλέξεις και όλα τα εργαστήρια.
+      </div>
+-->
+
+<!--
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Η <b>Επαναληπτική Εξέταση</b> θα γίνει την <b>Πέμπτη 31 Αυγούστου 2023: 17.30 - 20.30</b> στο Αμφιθέατρο ΣΟ. 
+      </div>
+-->
+
+
+    </div>
+  </div>
+  <!-- ______________________________________________________________________________________________ -->
+
+  <!-- HEADER -->
+  <div class="row">
+    <div class="col-md-1 hidden-xs">
+       <img src="./assets/images/chip-220.png" class="myimg img-responsive img-rounded center-block">
+    </div>
+    <div class="col-md-11">
+      <h3 class="mytitle">
+        ΗΥ220: Εργαστήριο Ψηφιακών Κυκλωμάτων (Εαρινό 2025)
+      </h3>
+      <h5>
+        <a href="http://www.csd.uoc.gr/" target="_new">Τμήμα Επιστήμης Υπολογιστών</a>,
+        <a href="http://www.uoc.gr/" target="_new">Πανεπιστήμιο Κρήτης</a>
+      </h5>
+    </div>
+  </div>
+  <!-- ______________________________________________________________________________________________ -->
+
+  
+  <!-- NAVIGATION TABS -->
+  <ul class="nav nav-pills nav-justified bg-info">
+    <li class="active">
+      <a data-toggle="pill" href="#course"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> Πληροφορίες</a>
+    </li>
+    <li>
+      <a data-toggle="pill" href="#lectures"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Διαλέξεις <span class="badge"></span></a>
+    </li>
+    <li>
+      <a data-toggle="pill" href="#assignments"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Εργ. Ασκήσεις <span class="badge alert-danger"></span></a>
+    </li>
+    <li>
+      <a data-toggle="pill" href="#labs"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Εργ. Τμήματα <span class="badge alert-danger"></span></a>
+    </li>
+    <li>
+      <a data-toggle="pill" href="#archive"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> Αρχείο Σελίδων</a>
+    </li>
+  </ul>
+  <hr>
+  <!-- ______________________________________________________________________________________________ -->
+
+  <div class="tab-content">
+
+    <!-- COURSE/MAIN/HOME -->
+    <div id="course" class="tab-pane fade in active">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Πρόγραμμα Διαλέξεων και Εργαστηρίων (Schedule)</h3>
+            </div>
+            <!--div class="panel-body">
+            </div-->
+              <table class="table">
+                <tr>
+                  <td>
+                    <b> Ώρες Διδασκαλίας: </b>
+                  </td>
+                  <td>
+                    Δευτέρα 14.15 - 16:00 στην αίθουσα Α.125
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  </td>
+                  <td>
+                    Τετάρτη 14.15 - 16:00 στην αίθουσα Α.125
+                  </td>
+                </tr>
+                <tr class="active">
+                  <td>
+                    <b>Ώρες Εργαστηρίων:</b>
+                  </td>
+                  <td>
+                     <mark>Θα ανακοινωθούν.</mark>
+                  </td>
+                </tr>
+                <!--
+                  <td>
+                    (A) Δευτέρα 16:00 - 17:00 στην αίθουσα Β.110
+                  </td>
+                </tr>
+                
+                <tr class="active">
+                  <td>
+                  </td>
+                  <td>
+                    (B) Δευτέρα 17:00 - 18:00 στην αίθουσα Β.110
+                  </td>
+                </tr>
+                <tr class="active">
+                  <td>
+                  </td>
+                  <td>
+                    (Γ) Πέμπτη 16:00 - 17:00 στην αίθουσα Β.110
+                  </td>
+                </tr>
+                <tr class="active">
+                  <td>
+                  </td>
+                  <td>
+                    (Δ) Πέμπτη 17:00 - 18:00 στην αίθουσα Β.110
+                  </td>
+                </tr>
+                <tr class="active">
+                  <td>
+                  </td>
+                  <td>
+                    (E) Πέμπτη 18:00 - 19:00 στην αίθουσα Β.110
+                  </td>
+                </tr>
+                -->
+                <tr>
+                  <td>
+                    <b>Ώρες Γραφείου: </b>
+                  </td>
+                  <td>
+                    <!-- Πέμπτη 16:00 - 18:00 @ Κ319 (κατόπιν συνεννόησης) -->
+                    Κατόπιν συνεννόησης @ K319
+                  </td>
+                </tr>
+              </table>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Διδακτικό Προσωπικό (Course Staff)</h3>
+            </div>
+            <!--div class="panel-body">
+            </div-->
+            <table class="table table-bordered">
+              <tr>
+                <td>
+                  <b>Διδάσκοντες</b>
+                </td>
+                <td>
+                  <b>Βοηθοί</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://sites.google.com/site/papaef/" target="_new">Βασίλης Παπαευσταθίου</a>
+                </td>
+                <td>
+                  Σωτήρης Τοτόμης
+                </td>
+              </tr>
+              <tr>
+                <td>
+                </td>
+                <td>
+                  Αλέξανδρος Φορτούνης
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Πληροφορίες Μαθήματος (Course Info)</h3>
+        </div>
+        <!-- div class="panel-body">
+        </div -->
+        <table class="table table-bordered">
+          <tr>
+            <td>
+              <b>Περιοχή:</b> 
+            </td>
+            <td>
+              Υλικό και Συστήματα Υπολογιστών (Ε4)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Περιγραφή:</b> 
+            </td>
+            <td>
+              Γλώσσες περιγραφής και προσομοίωσης υλικού, π.χ. Verilog. Επισκόπηση της τεχνολογίας FPGA, εργαλεία αυτόματης σύνθεσης κυκλωμάτων σε FPGA. Διαγράμματα χρονισμού, τεχνικές ελάττωσης καθυστέρησης. Αρτηρίες (δίαυλοι, λεωφόροι), πρωτόκολα χειραψίας, παραδείγματα εμπορικών αρτηριών. Μνήμες, π.χ. SRAM και SDRAM. Γέννηση ρολογιού, απόκλιση ρολογιού, χρήση PLL. Μεταστάθεια, σφάλμα συγχρονισμού, συγχρονιστές, ουρές και ελαστικοί ενταμιευτές, συγχρονισμός σημάτων άδειος/γεμάτος. Εργαστήριο: Ασκήσεις υλοποίησης μικρών έως μεσαίων εργασιών σε πλακέτες με FPGA, μετά από σχεδίαση και προσομοίωση σε Verilog.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>ECTS:</b> 
+            </td>
+            <td>
+              6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Προαπαιτούμενα:</b> 
+            </td>
+            <td>
+              <a href="http://www.csd.uoc.gr/~hy120" target="_new">ΗΥ120 - Ψηφιακή Σχεδίαση</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Βαθμολόγηση:</b> 
+            </td>
+            <td>
+              Εργαστήρια/Ασκήσεις: 65% <i>(βαθμός > 4.5)</i>
+              <br>
+              Τελική Εξέταση: 35% <i>(βαθμός > 4.5)</i>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Mailing-list:
+            </td>
+            <td>
+              hy220-list <u>at</u> csd <u>dot</u> uoc <u>dot</u> gr
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ACKNOWLEDGEMENTS -->
+      <div class="alert alert-success" role="alert">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 
+        Ευχαριστούμε θερμά το <a href="http://www.ics.forth.gr/carv" class="alert-link" target="_new">Εργαστήριο Αρχιτεκτονικής Υπολογιστών και Συστημάτων VLSI (CARV)</a> του Ινστιτούτου Πληροφορικής του ΙΤΕ γιά την ισχυρή υποστήριξη προς το μάθημα αυτό, τόσο - και κύρια - με έμψυχο δυναμικό όσο και με εργαστηριακό εξοπλισμό. Επίσης ευχαριστούμε το Πανεπιστημιακό Πρόγραμμα της εταιρείας <a href="http://www.xilinx.com/university/" class="alert-link" target="_new">Xilinx (XUP)</a> για την προσφορά εργαστηριακού εξοπλισμού και εργαλείων σχεδίασης σε ακαδημαϊκές τιμές. 
+        <hr>
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 
+        We deeply appreciate the strong support provided to this course by the <a href="http://www.ics.forth.gr/carv" class="alert-link" target="_new">Computer Architecture and VLSI Systems (CARV) Laboratory</a> of the Institute of Computer Science of FORTH, through - primarily - human resources, as well as with laboratory equipment. We also thank the <a href="http://www.xilinx.com/university/" class="alert-link" target="_new">Xilinx University Program (XUP)</a> for providing laboratory equipment and design tools at academic prices.
+      </div>
+
+    </div>
+    <!-- ______________________________________________________________________________________________ -->
+
+    <!-- LECTURES -->
+    <div id="lectures" class="tab-pane fade">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Πρόγραμμα και Υλικό Διαλέξεων (Schedule and Lecture Notes)</h3>
+        </div>
+        <!--div class="panel-body">
+        </div-->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Ημερομηνία</th>
+              <th>Περιγραφή</th>
+              <th>Σημειώσεις/Παρουσιάσεις</th>
+              <th>Επιπλέον Υλικό</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>05 Φεβ.</td>
+              <td>Εισαγωγή</td> 
+              <!--<td><a href="lectures/HY220_L0_Intro.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>-->
+              <td></td>
+              <td></td>
+            </tr>
+
+<!--
+            <tr>
+              <td>07 Φεβ.</td>
+              <td>Λογικές Πύλες, Στοιχεία Μνήμης, Συνδυαστική Λογική και Κυματομορφές</td>
+              <td><a href="lectures/HY220_L1_Digital.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>14 Φεβ.</td>
+              <td>Verilog: Τα βασικά</td>
+              <td><a href="lectures/HY220_L2_VerilogBasics.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>19 Φεβ.</td>
+              <td>Verilog: Τα βασικά (συνέχεια...)</td>
+              <td>Slides από 14 Φεβ.</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>21 Φεβ.</td>
+              <td>Vivado και Προσομοίωση (Σ.Τοτόμης)</td>
+              <td><a href="lectures/HY220_Vivado_Intro_2024s.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+
+            <tr>
+              <td>26 Φεβ.</td>
+              <td>Verilog: Μια πιο κοντινή ματιά</td>
+              <td><a href="lectures/HY220_L3_VerilogAdvanced.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>28 Φεβ.</td>
+              <td>Verilog: Μια πιο κοντινή ματιά (συνέχεια...)</td>
+              <td>Slides από 26 Φεβ.</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>04 Μαρ.</td>
+              <td>Verilog: Στύλ Κώδικα και Synthesizable Verilog</td>
+              <td><a href="lectures/HY220_L4_VerilogSynthesizable.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>06 Μαρ.</td>
+              <td>Verilog: Στύλ Κώδικα και Synthesizable Verilog (συνέχεια...)</td>
+              <td>Slides από 04 Μαρ.</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>11 Μαρ.</td>
+              <td>Verilog: Στύλ Κώδικα και Synthesizable Verilog (συνέχεια...)</td>
+              <td>Slides από 04 Μαρ.</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>13 Μαρ.</td>
+              <td>Verilog: Στύλ Κώδικα και Synthesizable Verilog (συνέχεια...)</td>
+              <td>Slides από 04 Μαρ.</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>20 Μαρ.</td>
+              <td>Μηχανές Πεπερασμένων Καταστάσεων - FSM</td>
+              <td><a href="lectures/HY220_L5_FSM.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>27 Μαρ.</td>
+              <td>Μηχανές Πεπερασμένων Καταστάσεων - FSM (συνέχεια...)</td>
+              <td>Slides από 20 Μαρ.</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>01 Απρ.</td>
+              <td>Χρονισμός Σύγχρονων Κυκλωμάτων, Καταχωρητές και Μανταλωτές</td>
+              <td><a href="lectures/HY220_L6_SYNCHRONOUS.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>03 Απρ.</td>
+              <td>Χρονισμός Σύγχρονων Κυκλωμάτων, Καταχωρητές και Μανταλωτές (συνέχεια...)</td>
+              <td>Slides από 01 Απρ.</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>08 Απρ.</td>
+              <td>Χρονισμός Σύγχρονων Κυκλωμάτων, Καταχωρητές και Μανταλωτές (συνέχεια...)</td>
+              <td>Slides από 01 Απρ.</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>10 Απρ.</td>
+              <td>Στατικές Μνήμες: SRAM</td>
+              <td><a href="lectures/HY220_L7_SRAM.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>15 Απρ.</td>
+              <td>Στατικές Μνήμες: SRAM (συνέχεια...)</td>
+              <td>Slides απο 10 Απρ.</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>17 Απρ.</td>
+              <td>Δυναμικές Μνήμες: DRAM</td>
+              <td><a href="lectures/HY220_L8_DRAM.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>22 Απρ.</td>
+              <td>Δυναμικές Μνήμες: DRAM (συνέχεια...)</td>
+              <td>Slides απο 17 Απρ.</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>24 Απρ.</td>
+              <td>Ροή Σχεδίασης και Εργαλεία CAD</td>
+              <td><a href="lectures/HY220_L9_DESIGN_FLOW.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>13 Μαι.</td>
+              <td>Ροή Σχεδίασης και Εργαλεία CAD (συνέχεια...)</td>
+              <td>Slides απο 08 Μαι.</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>15 Μαι.</td>
+              <td>Ρολόγια και Χρονισμός</td>
+              <td><a href="lectures/HY220_L10_CLOCKING.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+            <tr class="warning text-danger">
+              <td>12 Ιουν.</td>
+              <td>Τελική Εξέταση (35%) - Τετάρτη 12 Ιουνίου 2024: 13.30 - 16.30 στο Αμφ. ΣΟ</td>
+              <td></td>
+              <td></td>
+            </tr>
+-->
+
+<!--
+            <tr class="warning text-danger">
+              <td>18 Νοε.</td>
+              <td>Εξέταση Προόδου (15%) - Διαλέξεις μέχρι και "Χρονισμός Σύγχρονων Κυκλωμάτων" </td>
+              <td></td>
+              <td></td>
+            </tr>
+-->
+
+            <!--
+            <tr>
+              <td>19 Νοε.</td>
+              <td>Εργαστήριο 2: Παρουσίαση</td>
+              <td></td>
+              <td><a href="./homeworks/HY220_Lab2.pdf">Εκφώνηση <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+            </tr>
+
+            -->
+
+<!--
+            <tr>
+              <td>19 Δεκ.</td>
+              <td>Δίαυλοι: Πρωτόκολλο AXI</td>
+              <td><a href="./lectures/HY220_L11_AXI.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+            -->
+
+<!--
+            <tr class="info">
+              <td>18 Δεκ. 2017</td>
+              <td>Συζήτηση στην Αίθουσα</td>
+              <td></td>
+              <td></td>
+            </tr>
+-->
+
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Σημειώσεις, Εγχειρίδια και Σύνδεσμοι (Notes, Manuals and Links)</h3>
+        </div>
+        <div class="panel-body">
+          <ul> 
+            <li>
+              <h4>Verilog Coding Guidelines:</h4>
+              <a href="https://github.com/papaef/hy220_2025s/blob/main/misc/RTL_Coding_Guidelines-HY220.md" target="_new">HY220 SystemVerilog Coding Styles</a>
+              <hr>
+            </li>
+
+            <li>
+              <h4>Web-based Verilog/SystemVerilog Simulation Tools (for small experiments):</h4>
+              <a href="http://www.edaplayground.com/home" target="_new">EDA Playground</a>
+              &nbsp;<i>[also Waves (beta) with <a href="http://www.edaplayground.com/w/home" target="_new">EPWave</a>]</i>
+              <br>
+              <a href="https://www.tutorialspoint.com/compile_verilog_online.php" target="_new">TutorialPoints Verilog</a>
+              <hr>
+            </li>
+
+            <li>
+              <h4>Open-Source Verilog/SystemVerilog Simulators: <span class="badge alert-info">Updated</span></h4>
+              <a href="https://www.veripool.org/verilator/" target="_new">Verilator</a> (Linux, MacOS)
+              <br>
+              <a href="https://steveicarus.github.io/iverilog/" target="_new">Icarus Verilog (iverilog)</a> (Linux, MacOS)
+              <br>
+              <br>
+              <i>
+                Σε πολλές διανομές Linux (π.χ. Ubuntu, Debian, κτλ) ο Verilator και ο Icarus Verilog υπάρχουν στα έτοιμα πακέτα που μπορούν να εγκατασταθούν:
+              </i>
+              <pre>sudo apt-get install verilator<br>sudo apt-get install iverilog</pre>
+              <i>
+                Σε MacOS μπορείτε να το εγκαταστήσετε χειροκίνητα ή με package managers όπως το <a href="https://brew.sh/" target="_new">Homebrew:</a>
+              </i>
+              <pre>brew install verilator<br>brew install icarus-verilog</pre>
+              <div class="alert alert-warning myalert">
+                <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> 
+                Για προσομοίωση με τον <b>Verilator</b> θα πρέπει να έχετε <b>έκδοση >= 5.012</b>, ιδανικά έκδοση >= 5.020 (παλαιότερες εκδόσεις δεν είναι κατάλληλες για το μάθημα).
+                <br>
+                <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> 
+                Για προσομοίωση με τον <b>Icarus Verilog</b> θα πρέπει να έχετε <b>έκδοση >= 11</b>, ιδανικά έκδοση >= 12 (παλαιότερες εκδόσεις δεν είναι κατάλληλες για το μάθημα).
+              </div>
+              <hr>
+            </li>
+
+            <li>
+              <h4>Open-Source VCD Waveform Viewers:</h4>
+              <a href="http://gtkwave.sourceforge.net/" target="_new">GTKWave</a> (Linux, MacOS, Win)
+              <br>
+              <br>
+              <i>
+                Σε πολλές διανομές Linux (π.χ. Ubuntu, Debian, κτλ) το GTKwave υπάρχει στα έτοιμα πακέτα που μπορούν να εγκατασταθούν:
+              </i>
+              <pre>sudo apt-get install gtkwave</pre>
+
+              <i>
+                Σε MacOS μπορείτε να το εγκαταστήσετε χειροκίνητα ή με package managers όπως το <a href="https://brew.sh/" target="_new">Homebrew:</a>
+              </i>
+              <pre>brew install gtkwave</pre>
+
+              <div class="alert alert-warning myalert">
+                <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> 
+                Για να δείτε κυματομορφές από προσομοιώσεις θα πρέπει να γεννήσει η προσομοίωση αρχεία τύπου VCD (Value Change Dump). 
+                <br>
+                Για να γεννηθούν VCD αρχεία θα πρέπει απλά να προσθέσετε στο testbench σας τις παρακάτω γραμμές στην αρχή του <code>initial block</code> (αν δεν υπάρχουν ήδη):
+              </div>
+              <div class="well">
+                <code>initial begin</code><br>
+                <code>&nbsp;&nbsp;$dumpfile("tb_waves.vcd");</code><br>
+                <code>&nbsp;&nbsp;$dumpvars;</code><br>
+                <code>&nbsp;&nbsp;</code><br>
+                <code>&nbsp;&nbsp;// your other code below</code><br>
+                <code>&nbsp;&nbsp;</code><br>
+                <code>&nbsp;&nbsp;... </code><br>  
+                <code>&nbsp;&nbsp;</code><br>
+                <code>end</code><br>
+              </div>
+              <hr>
+            </li>
+
+            <li>
+              <h4>Προσομοιώσεις Verilog/SystemVerilog στα μηχανήματα του Τμήματος <span class="badge alert-success">New</span></h4>
+              <div class="alert alert-info myalert">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                Υποστηρίζονται τα εξής εργαλεία:
+                <b>
+                <ul>
+                  <li>Verilator (v5.020)</li>
+                  <li>Icarus Verilog (v12)</li>
+                  <li>Xilinx/AMD Vivado (v2018.3)</li>
+                  <li>GTKWave (v3.3.117)</li>
+                </ul>
+                </b>
+              </div>
+              <i>Σύντομος Οδηγός:</i>
+              <pre>cp -r ~hy220/tools/example .<br>cd example<br>source setup.sh<br>export HY220_SIMULATOR=verilator</pre>
+              <div class="alert alert-info myalert">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                Για περισσότερες λεπτομέρειες δείτε το <b>README.txt</b> που υπάρχει στο φάκελο example.
+              </div>
+              <i>Προσομοίωση σε command line:</i>
+              <pre>make</pre>
+              <i>Κυματομορφές μετά απο command line προσομοίωση:</i>
+              <pre>make gwaves</pre>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- ______________________________________________________________________________________________ -->
+
+    <!-- ASSIGNMENTS -->
+    <div id="assignments" class="tab-pane fade">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Ασκήσεις και Εργαστήρια (Exercises and Labs)</h3>
+        </div>
+        <!--div class="panel-body">
+        </div-->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Ημερομηνία</th>
+              <th>Περιγραφή</th>
+              <th>Εκφώνηση/Υλικό</th>
+              <th>Προθεσμία</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>TBA</td>
+              <td>Εργαστηριo 0: Εξοικείωση με προσομοίωση, εργαλεία προγραμματισμού FPGA και την πλακέτα</td> 
+              <td></td>
+              <td>TBA</td>
+            </tr>
+
+<!--
+            <tr>
+              <td>16 Μαρ.</td>
+              <td>Εργαστηριo 0: Εξοικείωση με προσομοίωση, εργαλεία προγραμματισμού FPGA και την πλακέτα</td> 
+              <td>
+                <a href="./labs/HY220_Lab0.pdf">Εκφώνηση <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                <br>
+                <a href="./labs/lab0_code.zip">Κώδικας <span class="glyphicon glyphicon-compressed" aria-hidden="true"></span></a>
+              </td>
+              <td>Εβδομάδα 19/03 έως 22/03 και <br> Εβδομάδα 26/03 έως 29/03</td>
+            </tr>
+
+            <tr>
+              <td>26 Μαρ.</td>
+              <td>Εργαστηριo 1: Χρονισμός VGA</td> 
+              <td>
+                <a href="./labs/HY220_Lab1.pdf">Εκφώνηση <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                <br>
+                <a href="./labs/lab1_code.zip">Κώδικας <span class="glyphicon glyphicon-compressed" aria-hidden="true"></span></a>
+              </td>
+              <td>Εβδομάδα 01/04 έως 05/04 και <br> Εβδομάδα 08/04 έως 12/04</td>
+            </tr>
+
+            <tr>
+              <td>09 Απρ.</td>
+              <td>Εργαστηριo 2: Λαβύρινθος στη VGA</td> 
+              <td>
+                <a href="./labs/HY220_Lab2.pdf">Εκφώνηση <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                <br>
+                <a href="./labs/lab2_code.zip">Κώδικας <span class="glyphicon glyphicon-compressed" aria-hidden="true"></span></a>
+              </td>
+              <td>Εβδομάδα 15/04 έως 19/04 και <br> Εβδομάδα 22/04 έως 26/04</td>
+            </tr>
+
+            <tr>
+              <td>24 Απρ.</td>
+              <td>Εργαστηριo 3: Μηχανή Ελέγχου για τον Λαβύρινθο</td> 
+              <td>
+                <a href="./labs/HY220_Lab3.pdf">Εκφώνηση <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                <br>
+                <a href="./labs/lab3_code.zip">Κώδικας <span class="glyphicon glyphicon-compressed" aria-hidden="true"></span></a>
+              </td>
+              <td>Εβδομάδα 13/05 έως 17/05 και <br> Εβδομάδα 20/05 έως 24/05</td>
+            </tr>
+-->
+            <!--
+            <tr>
+              <td>23 Νοε.</td>
+              <td>1η Σειρά Ασκήσεων</td> 
+              <td>
+                <a href="homeworks/HY220_HW1.pdf">Εκφώνηση <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                <br>
+                <a href="homeworks/hw1_code.tar.gz">Κώδικας <span class="glyphicon glyphicon-compressed" aria-hidden="true"></span></a>
+              </td>
+              <td class="alert alert-danger">04 Δεκ. 23:59</td>
+            </tr>
+
+            <tr>
+              <td>10 Δεκ.</td>
+              <td>2η Σειρά Ασκήσεων</td> 
+              <td>
+                <a href="homeworks/HY220_HW2.pdf">Εκφώνηση <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                <br>
+                <a href="homeworks/hw2_code.tar.gz">Κώδικας <span class="glyphicon glyphicon-compressed" aria-hidden="true"></span></a>
+              </td>
+              <td class="alert alert-danger">21 Δεκ. 23:59</td>
+            </tr>
+
+            <tr>
+              <td>08 Ιαν.</td>
+              <td>3η Σειρά Ασκήσεων</td> 
+              <td>
+                <a href="homeworks/HY220_HW3.pdf">Εκφώνηση <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                <br>
+                <a href="homeworks/hw3_code.tar.gz">Κώδικας <span class="glyphicon glyphicon-compressed" aria-hidden="true"></span></a>
+              </td>
+              <td class="alert alert-danger">31 Ιαν. 23:59</td>
+            </tr>
+
+            <tr>
+              <td>08 Ιαν.</td>
+              <td>4η Σειρά Ασκήσεων</td> 
+              <td>
+                <a href="homeworks/HY220_HW4.pdf">Εκφώνηση <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                <br>
+                <a href="homeworks/hw4_code.tar.gz">Κώδικας <span class="glyphicon glyphicon-compressed" aria-hidden="true"></span></a>
+              </td>
+              <td class="alert alert-danger">31 Ιαν. 23:59</td>
+            </tr>
+            -->
+
+<!--
+
+-->
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- ______________________________________________________________________________________________ -->
+
+    <!-- LABS -->
+    <div id="labs" class="tab-pane fade">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Εργαστηριακά Τμήματα και Ώρες (Lab Sessions)</h3>
+        </div>
+        <div class="panel-body">
+          TBA
+        </div>
+        <!--
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr class="warning">
+              <th>(Γκρουπ Α) <br> Δευτέρα 16:00 - 17:00</th>
+              <th>(Γκρουπ Β) <br> Δευτέρα 17:00 - 18:00</th>
+              <th>(Γκρουπ Γ) <br> Πέμπτη 16:00 - 17:00</th>
+              <th>(Γκρουπ Δ) <br> Πέμπτη 17:00 - 18:00</th>
+              <th>(Γκρουπ Ε) <br> Πέμπτη 18:00 - 19:00</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr> <td> 4653 </td> <td> 4642 </td> <td> 5124 </td> <td> 4579 </td> <td> 5050 </td> </tr>
+            <tr> <td> 3791 </td> <td> 4917 </td> <td> 3949 </td> <td> 5036 </td> <td> 4680 </td> </tr>
+            <tr> <td> 5205 </td> <td> 5067 </td> <td> 5109 </td> <td> 4257 </td> <td> 4402 </td> </tr>
+            <tr> <td> 4897 </td> <td> 4464 </td> <td> 3665 </td> <td> 4647 </td> <td> 4366 </td> </tr>
+            <tr> <td> 5002 </td> <td> 4582 </td> <td> 5031 </td> <td> 4487 </td> <td> 4800 </td> </tr>
+            <tr> <td> 4704 </td> <td> 4720 </td> <td> 4661 </td> <td> 3384 </td> <td> ---- </td> </tr>
+            <tr> <td> 5061 </td> <td> 4617 </td> <td> 4803 </td> <td> 4541 </td> <td> ---- </td> </tr>
+            <tr> <td> 4542 </td> <td> 3632 </td> <td> 4281 </td> <td> 4621 </td> <td> ---- </td> </tr>
+          </tbody>
+        </table>
+        -->
+      </div>
+    </div>
+
+    <!-- ______________________________________________________________________________________________ -->
+
+    <!-- ARCHIVE -->
+    <div id="archive" class="tab-pane fade">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> Σελίδες Παλαιοτέρων Ετών (Websites from Previous Years)</h3>
+        </div>
+        <!--div class="panel-body">
+        </div-->
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a href="https://papaef.github.io/hy220/2024s/">Spring 2024</a>,
+            <a href="https://papaef.github.io/hy220/2023s/">Spring 2023</a>,
+            <a href="https://papaef.github.io/hy220/2022s/">Spring 2022</a>
+            (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy220/2020f/index.html">Fall 2020</a>,
+            <a href="https://www.csd.uoc.gr/~hy220/2019f/index.html">Fall 2019</a>,
+            <a href="https://www.csd.uoc.gr/~hy220/2018f/index.html">Fall 2018</a>
+            (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy220/2017f/index.html">Fall 2017</a>
+            (taught by V. Papaefstathiou and G. Kalokerinos)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy220/2016f/index.html">Fall 2016</a>,
+            <a href="https://www.csd.uoc.gr/~hy220/2015f/index.html">Fall 2015</a>,
+            <a href="https://www.csd.uoc.gr/~hy220/2014f/index.html">Fall 2014</a>,
+            <a href="https://www.csd.uoc.gr/~hy220/2013f/index.html">Fall 2013</a>
+            (taught by G. Kalokerinos)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy220/2012f/index.html">Fall 2012</a>,
+            <a href="https://www.csd.uoc.gr/~hy220/2011f/index.html">Fall 2011</a>,
+            <a href="https://www.csd.uoc.gr/~hy220/2010f/index.html">Fall 2010</a>
+            (taught by C. Sotiriou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy220/2009f/index.html">Fall 2009</a>
+            (taught by C. Kachris)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy220/2008f/index.html">Fall 2008</a>
+            (taught by G. Dimitrakopoulos)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy220/2007f/index.html">Fall 2007</a>,
+            <a href="https://www.csd.uoc.gr/~hy220/2006f/index.html">Fall 2006</a>
+            (taught by V. Papaefstathiou and G. Kalokerinos)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy220/2005/index.html">Fall 2005</a>
+            (taught by I. Mavroidis)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy220/2003/index.html">Fall 2003</a>,
+            <a href="https://www.csd.uoc.gr/~hy220/2001/index.html">Fall 2001</a>
+            (taught by G. Kalokerinos, C. Sotiriou, and I. Papaefstathiou)
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- ______________________________________________________________________________________________ -->
+
+  </div> <!-- END TAB-CONTENT-->
+
+  <!-- FOOTER -->
+  <div class="well well-sm" align="right">
+    <i><b>Last update:</b> 10 Feb. 2025</i> - by V. Papaefstathiou
+  </div>
+  <!-- ______________________________________________________________________________________________ -->
+
+</div>
+</body>
+</html>
